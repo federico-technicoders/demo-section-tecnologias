@@ -13,32 +13,35 @@ const ICONS = [gsapIcon, nextIcon, openGLIcon, reactIcon, tailwindIcon, threeIco
 const elements = [...ICONS, ...ICONS]
 
 export default function Home() {
-    return (
+    return (         
         <main className="flex flex-col justify-start items-start w-full min-h-screen">
             <section 
-                className="relative flex flex-col justify-center items-start w-full h-screen z-0"
+                className="relative flex flex-col justify-center items-center w-full h-screen z-0"
             >
                 <Marquee ELEMENTS={elements} />
                 <Marquee ELEMENTS={elements} />
-                <Marquee ELEMENTS={elements} />
-                {/* <div 
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white border-solid rounded-full w-[300px] h-[300px] z-10"
-                >
-                    
-                </div> */}
-                <div 
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white border-solid rounded-full w-[300px] h-[300px] z-10 bg-gradient-to-r from-slate-900 to-blue-500"
-                >
+                <Marquee ELEMENTS={elements} />        
+                <div className="absolute w-[300px] h-[300px]">                
+                    <div 
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white border-solid rounded-full w-[300px] h-[300px] z-10 bg-gradient-to-r from-slate-900 to-blue-500"
+                    >
+                    </div>
+
+                
+                    <div 
+                        className="absolute inset-0 border-2 border-white rounded-full animate-ping-short opacity-70"
+                        style={{ animationDelay: '0s' }}
+                    >
+                    </div>
+
+                
+                    <div 
+                        className="absolute inset-0 border-2 border-white rounded-full animate-ping-short opacity-50"
+                        style={{ animationDelay: '1s' }}
+                    >
+                    </div>
                 </div>
             </section>
-                {/* <button 
-                        className="px-[20px] py-[5px] border-[3px] border-cyan-400 rounded-full"
-                        
-                >
-                    <span className="text-xl bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-400">
-                        Quiero impulsar mi negocio
-                    </span>
-                </button>                         */}
-        </main>   
+        </main>
     )
 }
