@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { twJoin, twMerge } from 'tailwind-merge'
 
 
-const Marquee = ({ ELEMENTS=[], isReversed = false, className }) => {
+const MarqueeBg = ({ ELEMENTS=[], isReversed = false, className }) => {
   const movingContainer = useRef(null)
   const timeline = useRef()
 
@@ -53,8 +53,7 @@ const Marquee = ({ ELEMENTS=[], isReversed = false, className }) => {
                 return (
                     <div
                         key={index}
-                        className={twJoin('relative flex shrink-0 items-center justify-center p-3 mb-5 border border-1 border-solid border-white rounded-3xl', isLast && 'mr-10')}
-                        // style={{ height: src.height, width: src.width }}>
+                        className={twJoin('relative flex shrink-0 items-center justify-center rounded-3xl p-3 mb-5 bg-gradient-to-r from-teal-400 to-cyan-400', isLast && 'mr-10')}
                         style={{ height: '50px', width: src.width }}
                     >
                         <Image src={src} alt="Technology icon" height={40} className="object-contain" />
@@ -74,7 +73,10 @@ const Marquee = ({ ELEMENTS=[], isReversed = false, className }) => {
                 maskImage: 'linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%)',
             }}
         >
-            <div ref={movingContainer} className="flex w-fit">
+            <div 
+                ref={movingContainer} 
+                className="flex w-fit"
+            >
                 {list}
                 {list}
             </div>
@@ -82,4 +84,4 @@ const Marquee = ({ ELEMENTS=[], isReversed = false, className }) => {
     )
 }
 
-export default Marquee
+export default MarqueeBg
